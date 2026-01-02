@@ -48,16 +48,15 @@ top_10_alto = df.sort_values(
 y_pos = np.arange(len(top_10_alto))
 
 plt.figure(figsize=(10, 6))
-plt.barh(
-    y_pos,
-    top_10_alto["Cost of living, 2017"].to_numpy()
-)
+plt.barh(y_pos, top_10_alto["Cost of living, 2017"].to_numpy())
 plt.yticks(y_pos, top_10_alto["Countries"])
 plt.xlabel("Costo de vida (2017)")
 plt.ylabel("País")
 plt.title("Los 10 países con el costo de vida más alto")
 plt.gca().invert_yaxis()
-plt.show()
+plt.tight_layout()
+plt.savefig("top_10_costo_mas_alto.png", dpi=300)
+plt.close()
 
 #Los 10 países con el costo de vida más bajo
 
@@ -69,16 +68,15 @@ top_10_bajo = df.sort_values(
 y_pos = np.arange(len(top_10_bajo))
 
 plt.figure(figsize=(10, 6))
-plt.barh(
-    y_pos,
-    top_10_bajo["Cost of living, 2017"].to_numpy()
-)
+plt.barh(y_pos, top_10_bajo["Cost of living, 2017"].to_numpy())
 plt.yticks(y_pos, top_10_bajo["Countries"])
 plt.xlabel("Costo de vida (2017)")
 plt.ylabel("País")
 plt.title("Los 10 países con el costo de vida más bajo")
 plt.gca().invert_yaxis()
-plt.show()
+plt.tight_layout()
+plt.savefig("top_10_costo_mas_bajo.png", dpi=300)
+plt.close()
 
 
 # El costo de vida de los países de América
@@ -88,12 +86,11 @@ america = df[df["Continent"] == "America"]
 x_pos = np.arange(len(america))
 
 plt.figure(figsize=(12, 6))
-plt.bar(
-    x_pos,
-    america["Cost of living, 2017"].to_numpy()
-)
+plt.bar(x_pos, america["Cost of living, 2017"].to_numpy())
 plt.xticks(x_pos, america["Countries"], rotation=90)
 plt.xlabel("País")
 plt.ylabel("Costo de vida (2017)")
 plt.title("El costo de vida de los países de América")
-plt.show()
+plt.tight_layout()
+plt.savefig("costo_vida_america.png", dpi=300)
+plt.close()
