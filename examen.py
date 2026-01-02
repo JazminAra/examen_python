@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from IPython.display import Image, display 
 
 # Cargar el dataset
 # ruta = "C:\\Users\\rcolr.BTS\\Documents\\CASA_INFORMATICA\\data\\living.csv"
@@ -59,7 +58,6 @@ plt.tight_layout()
 plt.savefig("top_10_costo_mas_alto.png", dpi=300)
 plt.close()
 
-display(Image(filename="top_10_costo_mas_alto.png"))
 
 #Los 10 países con el costo de vida más bajo
 
@@ -81,7 +79,7 @@ plt.tight_layout()
 plt.savefig("top_10_costo_mas_bajo.png", dpi=300)
 plt.close()
 
-display(Image(filename="top_10_costo_mas_bajo.png"))
+
 
 # El costo de vida de los países de América
 
@@ -99,4 +97,3 @@ plt.tight_layout()
 plt.savefig("costo_vida_america.png", dpi=300)
 plt.close()
 
-display(Image(filename="costo_vida_america.png"))
